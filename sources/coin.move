@@ -1,18 +1,17 @@
 // Copyright (c) Mysten Labs, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-//docs::#regulate
-module playground::something {
+module playground::pie {
     use sui::coin::{Self};
 
-    public struct SOMETHING has drop {}
+    public struct PIE has drop {}
 
-    fun init(witness: SOMETHING, ctx: &mut TxContext) {
+    fun init(witness: PIE, ctx: &mut TxContext) {
         let decimal = 6;
         let (mut treasury_cap, deny_cap, metadata) = coin::create_regulated_currency_v2(
             witness,
             decimal,
-            b"SOMETHING",
+            b"PIE",
             b"",
             b"",
             option::none(),
